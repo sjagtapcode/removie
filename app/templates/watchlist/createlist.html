@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "home.html" %}
+
+{% block head_title %}create watchlist{% endblock%}
+
+{% block body_block %}
+    <form method="post" action="">
+        {% csrf_token %}
+        <h3>Select Movies you have watched</h3>
+        {% for movie in movies %}
+            <br/><input type="checkbox" value="{{movie.mid}}" name="checklist"/>{{movie.title}}</a><br/>
+        {% endfor %}
+        <br/><button type="submit">Create List</button>
+        <br/><br/><button type="reset">Reset List</button><br/>
+    </form>
+{% endblock %}

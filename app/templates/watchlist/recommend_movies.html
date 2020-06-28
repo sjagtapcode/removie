@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "home.html" %}
+
+{% block head_title %}Recommend Movies{% endblock%}
+
+{% block body_block %}
+    Movies Recommended according to the playlist
+    {% for movie in list %}
+        <br/>{{movie.mid}} : {{movie.title}}<br/>
+    {% endfor %}
+{% endblock %}
+
+

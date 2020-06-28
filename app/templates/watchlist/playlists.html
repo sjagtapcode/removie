@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends "home.html" %}
+
+{% block head_title %}List Playlists{% endblock%}
+
+{% block body_block %}
+    <h3>List of all Playlists</h3>
+    {% for playlist in playlists %}
+    <br/><a href="singleplaylist/{{playlist.lid}}">{{playlist.lid}} : {{playlist.name}}</a><br/>
+    {% endfor %}
+{% endblock %}

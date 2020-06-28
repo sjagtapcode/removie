@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "home.html" %}
+
+{% block head_title %}search movies{% endblock%}
+
+{% block body_block %}
+    <h3>Search Movies</h3>
+    <br />
+    <form action="searchmovie" method="GET">
+        <input type="text" name="name"/>
+        <br />
+        <button type="submit">Search</button>
+    </form>
+    <br />
+    <br />
+
+    {% if hasMovies %}
+    {% for movie in movies %}
+    <br/>
+    <a href="/singlemovie/{{movie.mid}}">{{movie.title}}</a>
+    <br/>
+    {% endfor %}
+    {% endif %}
+{% endblock %}

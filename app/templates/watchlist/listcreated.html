@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends "home.html" %}
+
+{% block head_title %}watchlist view{% endblock%}
+
+{% block body_block %}
+    <h3>Your Watch List is Ready</h3>
+    {% for movie in movies %}
+        <br/>{{movie.title}}</a><br/>
+    {% endfor %}
+{% endblock %}
